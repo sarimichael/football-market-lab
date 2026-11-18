@@ -1,0 +1,33 @@
+# All settings live here. Change them here, never in the code.
+
+leagues:            # football-data.co.uk division codes
+  E0: Premier League
+  D1: Bundesliga
+  F1: Ligue 1
+  N1: Eredivisie
+
+seasons: ["2021", "2122", "2223", "2324", "2425", "2526"]   # 2020/21 ... 2025/26
+
+paths:
+  raw: data/raw
+  processed: data/processed/matches.csv
+  reports: reports
+
+market:
+  # Preferred odds: Pinnacle closing. Fallback: market-average closing.
+  closing_cols: ["PSCH", "PSCD", "PSCA"]
+  closing_fallback: ["AvgCH", "AvgCD", "AvgCA"]
+  margin_method: power          # multiplicative | power | shin
+
+elo:
+  k: 20                         # update speed
+  home_advantage: 60            # Elo points added to the home side's rating
+  season_regression: 0.25       # pull ratings 25% back to the league mean each summer
+  new_team_quantile: 0.2        # promoted teams start at the league's 20th-percentile rating
+  goal_diff_multiplier: true
+
+walk_forward:
+  test_start: "2023-07-01"      # first month predicted out of sample
+  window_years: 3               # rolling training window
+  step: MS                      # refit at the start of every month
+  half_life_days: null          # e.g. 365 to weight recent matches more; null = equal weights
