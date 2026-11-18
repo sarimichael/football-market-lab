@@ -1,0 +1,58 @@
+{
+  "run_utc": "2026-11-18T12:20:58+00:00",
+  "git_revision": "c8d505b",
+  "config_sha256": "5b29da518af2ce86",
+  "data_sha256": "d66a6d57e729a1b8",
+  "n_matches": 8010,
+  "date_range": [
+    "2020-08-21 18:00:00",
+    "2026-05-24 16:00:00"
+  ],
+  "config": {
+    "leagues": {
+      "E0": "Premier League",
+      "D1": "Bundesliga",
+      "F1": "Ligue 1",
+      "N1": "Eredivisie"
+    },
+    "seasons": [
+      "2021",
+      "2122",
+      "2223",
+      "2324",
+      "2425",
+      "2526"
+    ],
+    "paths": {
+      "raw": "data/raw",
+      "processed": "data/processed/matches.csv",
+      "reports": "reports"
+    },
+    "market": {
+      "closing_cols": [
+        "PSCH",
+        "PSCD",
+        "PSCA"
+      ],
+      "closing_fallback": [
+        "AvgCH",
+        "AvgCD",
+        "AvgCA"
+      ],
+      "margin_method": "power"
+    },
+    "elo": {
+      "k": 20,
+      "home_advantage": 60,
+      "season_regression": 0.25,
+      "new_team_quantile": 0.2,
+      "goal_diff_multiplier": true
+    },
+    "walk_forward": {
+      "test_start": "2023-07-01",
+      "window_years": 3,
+      "step": "MS",
+      "half_life_days": null
+    }
+  }
+}
