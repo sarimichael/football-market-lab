@@ -1,5 +1,5 @@
 # data is downloaded by scripts, never committed
-data/
+/data/
 reports/demo/
 reports/predictions.csv
 
@@ -12,3 +12,4 @@ __pycache__/
 .ipynb_checkpoints/
 .env
 .DS_Store
+
